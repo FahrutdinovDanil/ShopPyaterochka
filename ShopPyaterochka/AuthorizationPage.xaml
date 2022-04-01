@@ -26,14 +26,15 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="Логин" Foreground="#AD7261" FontSize="25" Grid.Column="1" Grid.Row="2"/>
-        <TextBlock Text="Пароль" Foreground="#AD7261" FontSize="25" Grid.Column="1" Grid.Row="3"/>
+        <TextBlock Text="Логин" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="25" Grid.Column="1" Grid.Row="2"/>
+        <TextBlock Text="Пароль" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="25" Grid.Column="1" Grid.Row="3"/>
 
-        <TextBox x:Name="tb_login" Grid.Column="2" Grid.Row="2" FontFamily="Arial"/>
-        <TextBox x:Name="tb_password" Grid.Column="2" Grid.Row="3"/>
+        <TextBox x:Name="tb_login" Grid.Column="2" Grid.Row="2" FontFamily="Arial" Height="40" Width="300"/>
+        <TextBox x:Name="tb_password" Grid.Column="2" Grid.Row="3" Height="40" Width="300"/>
 
-        <Button x:Name="btn_reg" Content="Зарегистрироваться" Grid.Column="1" Grid.Row="5" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026" Click="btn_reg_Click"/>
-        <Button x:Name="btn_authorization" Content="Войти" Grid.Column="2" Grid.Row="5" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026"/>
+        <Button x:Name="btn_authorization" Content="Войти" FontSize="18" Grid.Column="1" Grid.Row="5" Height="40" Width="180" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026"/>
+        <Button x:Name="btn_reg" Content="Зарегистрироваться" FontSize="18" Grid.Column="2" Grid.Row="5" Height="40" Width="180" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026" Click="btn_reg_Click"/>
+        
 
     </Grid>
 </Page>

@@ -14,6 +14,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -28,25 +31,25 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="ФИО" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock Text="Пол" Grid.Column="1" Grid.Row="2"/>
-        <TextBlock Text="Телефон" Grid.Column="1" Grid.Row="3"/>
-        <TextBlock Text="Email" Grid.Column="1" Grid.Row="4"/>
-        <TextBlock Text="Логин" Grid.Column="1" Grid.Row="5"/>
-        <TextBlock Text="Пароль" Grid.Column="1" Grid.Row="6"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="18" Text="ФИО" Grid.Column="1" Grid.Row="2" />
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="18" Text="Пол" Grid.Column="1" Grid.Row="3"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="18" Text="Телефон" Grid.Column="1" Grid.Row="4"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="18" Text="Email" Grid.Column="4" Grid.Row="2"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="18" Text="Логин" Grid.Column="4" Grid.Row="3"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#AD7261" FontSize="18" Text="Пароль" Grid.Column="4" Grid.Row="4"/>
 
-        <TextBox x:Name="tb_FIO" Grid.Column="2" Grid.Row="1"/>
-        <TextBox x:Name="tb_phone" Grid.Column="2" Grid.Row="3"/>
-        <TextBox x:Name="tb_email" Grid.Column="2" Grid.Row="4"/>
-        <TextBox x:Name="tb_login" Grid.Column="2" Grid.Row="5"/>
-        <TextBox x:Name="tb_password" Grid.Column="2" Grid.Row="6"/>
+        <TextBox x:Name="tb_FIO" Grid.Column="2" Grid.Row="2" Height="40" Width="300"/>
+        <TextBox x:Name="tb_phone" Grid.Column="2" Grid.Row="4" Height="40" Width="300"/>
+        <TextBox x:Name="tb_email" Grid.Column="5" Grid.Row="2" Height="40" Width="300"/>
+        <TextBox x:Name="tb_login" Grid.Column="5" Grid.Row="3" Height="40" Width="300"/>
+        <TextBox x:Name="tb_password" Grid.Column="5" Grid.Row="4" Height="40" Width="300"/>
 
-        <ComboBox Name="cb_gender" Grid.Column="2" Grid.Row="2">
+        <ComboBox Name="cb_gender" Grid.Column="2" Grid.Row="3" Height="40" Width="300">
             <TextBlock Text="Мужской"/>
             <TextBlock Text="Женский"/>
         </ComboBox>
 
-        <Button x:Name="btn_Ok" Content="Зарегистрироваться" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="8" Click="btn_Ok_Click"/>
-        <Button x:Name="btn_back" Content="Назад" Grid.Column="0" Grid.Row="0" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btn_back_Click"/>
+        <Button x:Name="btn_Ok" Content="Зарегистрироваться" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="8" Height="40" Width="200" BorderBrush="#AD7261" Background="#FAB7A4" Click="btn_Ok_Click"/>
+        <Button x:Name="btn_back" Content="Назад" Grid.Column="0" Grid.Row="0" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#AD7261" Background="#FAB7A4" Click="btn_back_Click"/>
     </Grid>
 </Page>
