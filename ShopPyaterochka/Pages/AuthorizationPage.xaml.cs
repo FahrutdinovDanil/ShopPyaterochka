@@ -25,8 +25,9 @@ namespace ShopPyaterochka
         public AuthorizationPage()
         {
             InitializeComponent();
+            tb_login.Text = Properties.Settings.Default.Login;
         }
-        private void btn_reg_Click(object sender, RoutedEventArgs e)
+        private void btn_registration_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RegistrationPage());
         }
@@ -37,7 +38,17 @@ namespace ShopPyaterochka
             var z = users.Where(a => a.Login == tb_login.Text && a.Password == tb_password.Text).FirstOrDefault();
             if (z != null)
             {
-                NavigationService.Navigate(new ListPage());
+                if (cb_save.IsChecked.GetValueOrDefault())
+                {
+                    Properties.Settings.Default.Login = tb_login.Text;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Login = null;
+                    Properties.Settings.Default.Save();
+                }
+                NavigationService.Navigate(new ListPage(z));
             }
             else
             {
