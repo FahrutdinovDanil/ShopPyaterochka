@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopPyaterochka"
         mc:Ignorable="d"
-        Title="BackgroundWindow" Height="450" Width="800" WindowState="Maximized" Background="#FFCFC2"
+        Title="BackgroundWindow" Height="450" Width="800" WindowState="Maximized" SizeToContent="WidthAndHeight" Background="#FFCFC2"
         FontFamily="Arial">
     <Grid>
         <Frame x:Name="frame_auto_reg" NavigationUIVisibility="Hidden"/>

@@ -54,9 +54,25 @@ namespace ShopPyaterochka.Pages
             NavigationService.Navigate(new ListPage(ListPage.user));
         }
 
+        public static bool DeleteProduct(Product product)
+        {
+            product.IsDeleted = true;
+            try
+            {
+                db_connection.connection.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void btn_delite_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Вы действительно хотите удалить?");
+            DeleteProduct(constProd);
+            MessageBox.Show($"Продукт {constProd.Name} удалён");
+            NavigationService.Navigate(new ListPage(ListPage.user));
         }
 
         private void tb_name_PreviewTextInput(object sender, TextCompositionEventArgs e)
