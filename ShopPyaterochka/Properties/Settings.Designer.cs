@@ -34,5 +34,16 @@ namespace ShopPyaterochka.Properties {
                 this["Login"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime Password {
+            get {
+                return ((global::System.DateTime)(this["Password"]));
+            }
+            set {
+                this["Password"] = value;
+            }
+        }
     }
 }

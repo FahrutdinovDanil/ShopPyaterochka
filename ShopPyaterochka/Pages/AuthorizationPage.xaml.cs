@@ -21,6 +21,7 @@ namespace ShopPyaterochka
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+        public static int pass_count = 0;
         public static ObservableCollection<User> users { get; set; }
         public AuthorizationPage()
         {
@@ -52,7 +53,15 @@ namespace ShopPyaterochka
             }
             else
             {
-                MessageBox.Show("Логин или пароль неверный", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                pass_count++;
+                MessageBox.Show("Неверный логин или пароль", "error", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (pass_count == 3)
+                {
+                    pass_count = 0;
+                    Properties.Settings.Default.Password = DateTime.Now.AddMinutes(1);
+                    Properties.Settings.Default.Save();
+                    tb_password.Visibility = Visibility.Hidden;
+                }
             }
         }
     }

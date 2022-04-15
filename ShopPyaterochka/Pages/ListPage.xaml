@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
 
         <Image Source="/img/logo.jpg" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left"/>
-        <Button x:Name="btn_add" Content="+" Grid.Column="4" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible" Click="btn_add_Click"/>
+        <Button x:Name="btn_add" Content="Добавить" Grid.Column="4" Grid.Row="0" Height="50" Width="50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Visible" Click="btn_add_Click"/>
         <!--<Button x:Name="btn_othet" Content="Отчеты" Grid.Column="0" Grid.Row="0" Height="40" Width="120" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         <Button x:Name="btn_order" Content="Заказ" Grid.Column="0" Grid.Row="0" Height="40" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btn_order_Click"/>-->
 
@@ -67,20 +67,20 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBlock Text="Найти:" FontSize="18"  Grid.Row="0" Grid.Column="2" Margin="20,0,0,15" VerticalAlignment="Center"/>
-        <TextBox x:Name="tb_search" Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Center" SelectionChanged="tb_search_SelectionChanged" TextChanged="tb_search_TextChanged" Grid.ColumnSpan="2" Margin="100,0,100,10" />
-        <ComboBox Name="cb_unit" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="90" SelectionChanged="cb_unit_SelectionChanged" Margin="175,0,0,0" Grid.ColumnSpan="2"/>
-        <ComboBox Name="cb_alf" HorizontalAlignment="Left" VerticalAlignment="Center" Height="25" Width="150" SelectionChanged="cb_unit_SelectionChanged" Margin="270,0,0,0" Grid.ColumnSpan="2">
+        <TextBlock Text="Найти:" FontSize="18"  Grid.Row="0" Grid.Column="2" Margin="80,16,140,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tb_search" Grid.Row="0" Grid.Column="2" Height="25" VerticalAlignment="Top" SelectionChanged="tb_search_SelectionChanged" TextChanged="tb_search_TextChanged" Grid.ColumnSpan="2" Margin="140,15,60,0" />
+        <ComboBox Name="cb_unit" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="90" SelectionChanged="cb_unit_SelectionChanged" Margin="185,15,0,0" Grid.ColumnSpan="2"/>
+        <ComboBox Name="cb_alf" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="150" SelectionChanged="cb_unit_SelectionChanged" Margin="20,15,0,0" Grid.Column="1">
             <ComboBoxItem Content="По умолчанию"></ComboBoxItem>
             <ComboBoxItem Content="от А до Я"></ComboBoxItem>
             <ComboBoxItem Content="от Я до А"></ComboBoxItem>
         </ComboBox>
-        <ComboBox Name="cb_date" Grid.Column="0" Grid.Row="0" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="cb_unit_SelectionChanged"  Margin="40,0,0,0">
+        <ComboBox Name="cb_date" Grid.Column="0" Grid.Row="0" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="cb_unit_SelectionChanged"  Margin="15,15,0,0" Grid.ColumnSpan="2">
             <ComboBoxItem Content="По умолчанию"/>
             <ComboBoxItem Content="От старых к новым"/>
             <ComboBoxItem Content="От новых к старым"/>
         </ComboBox>
-        <CheckBox Name="cb_mounth" Content="В этом месяце" FontSize="16" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Click="cb_mounth_Click" Margin="0,35,0,53" Grid.RowSpan="2"/>
+        <CheckBox Name="cb_mounth" Content="В этом месяце" FontSize="16" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Click="cb_mounth_Click" Margin="0,-3,115,38" Grid.ColumnSpan="2"/>
 
         <ComboBox Name="cb_count" Grid.Row="8" Grid.Column="0" Width="70" HorizontalAlignment="Left" SelectionChanged="cb_count_SelectionChanged">
             <ComboBoxItem Content="Все"/>
