@@ -18,7 +18,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -33,32 +36,32 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#AD7261" FontSize="24" Text="ФИО" Grid.Row="2" Margin="0,30,0,0" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#AD7261" FontSize="24" Text="Пол" Grid.Row="3" Margin="0,30,0,0" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#AD7261" FontSize="24" Text="Телефон" Grid.Row="4" Margin="0,30,0,0" Grid.Column="1"/>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#AD7261" FontSize="24" Text="Email" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Margin="90,30,0,0" />
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#AD7261" FontSize="24" Text="Логин" Grid.Column="4" Grid.Row="3" Margin="90,30,0,0" Grid.ColumnSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#AD7261" FontSize="24" Text="Пароль" Grid.Column="4" Grid.Row="4" Margin="90,30,0,0" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#AD7261" FontSize="24" Text="ФИО" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#AD7261" FontSize="24" Text="Пол" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#AD7261" FontSize="24" Text="Телефон" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#AD7261" FontSize="24" Text="Email" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#AD7261" FontSize="24" Text="Логин" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#AD7261" FontSize="24" Text="Пароль" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,10,0"/>
 
-        <TextBox x:Name="tb_FIO" BorderThickness="0 0 0 2" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="250" Margin="5,5,0,0"/>
-        <TextBox x:Name="tb_phone" BorderThickness="0 0 0 2" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="250" Margin="5,5,0,0"/>
-        <TextBox x:Name="tb_email" BorderThickness="0 0 0 2" Grid.ColumnSpan="3" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="250" Margin="80,5,0,0"/>
-        <TextBox x:Name="tb_login" BorderThickness="0 0 0 2" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="250" Margin="80,5,0,0" Grid.ColumnSpan="3"/>
-        <TextBox x:Name="tb_password" BorderThickness="0 0 0 2" Grid.ColumnSpan="3" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="250" Margin="80,5,0,0"/>
+        <TextBox x:Name="tbFIO" BorderThickness="0 0 0 2" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="200"/>
+        <TextBox x:Name="tbPhone" BorderThickness="0 0 0 2" Grid.Column="3" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="200" PreviewTextInput="tbPhone_PreviewTextInput"/>
+        <TextBox x:Name="tbEmail" BorderThickness="0 0 0 2" Grid.Column="8" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="200"/>
+        <TextBox x:Name="tbLogin" BorderThickness="0 0 0 2" Grid.Column="8" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="200"/>
+        <TextBox x:Name="tbPassword" BorderThickness="0 0 0 2" Grid.Column="8" Grid.Row="4" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="18" BorderBrush="#AD7261" Background="#FFCFC2" Foreground="#FF553026" Height="40" Width="200"/>
 
-        <ComboBox Name="cb_gender" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="14" Height="40" Width="250" Margin="5,5,0,0">
+        <ComboBox Name="cbGender" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="14" Height="40" Width="200">
             <TextBlock Text="Мужской"/>
             <TextBlock Text="Женский"/>
         </ComboBox>
 
-        <Button x:Name="btn_Ok" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Content="Зарегистрироваться" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" Height="40" Width="200" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026" Click="btn_Ok_Click" Margin="70,5,0,0">
+        <Button x:Name="btnSignUp" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" Content="Зарегистрироваться" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="4" Height="40" Width="200" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026" Click="btnSignUp_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="18"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button x:Name="btn_back" Content="Назад" Grid.Column="4" Grid.Row="6" FontSize="18"  Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026" Click="btn_back_Click" Grid.ColumnSpan="3" Margin="80,5,0,0">
+        <Button x:Name="btnBack" Content="Назад" Grid.Column="7" Grid.Row="6" Grid.ColumnSpan="3" FontSize="18"  Width="150" Height="40" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#AD7261" Background="#FAB7A4" Foreground="#FF553026" Click="btnBack_Click">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="18"/>

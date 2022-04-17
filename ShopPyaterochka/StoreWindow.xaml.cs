@@ -18,9 +18,9 @@ namespace ShopPyaterochka
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StoreWindow : Window
     {
-        public MainWindow()
+        public StoreWindow()
         {
             InitializeComponent();
             frame_auto_reg.NavigationService.Navigate(new AuthorizationPage());

@@ -27,48 +27,56 @@ namespace ShopPyaterochka
         {
             InitializeComponent();
         }
-        private void btn_back_Click(object sender, RoutedEventArgs e)
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
 
-        private void btn_Ok_Click(object sender, RoutedEventArgs e)
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
             if (CorrectPass())
             {
                 int role = 3;
-                var new_user = new User();
-                var new_client = new Client();
+                var newUser = new User();
+                var newClient = new Client();
 
-                new_user.Login = tb_login.Text;
-                new_user.Password = tb_password.Text;
-                new_user.RoleId = role;
-                db_connection.connection.User.Add(new_user);
+                newUser.Login = tbLogin.Text;
+                newUser.Password = tbPassword.Text;
+                newUser.RoleId = role;
+                db_connection.connection.User.Add(newUser);
                 db_connection.connection.SaveChanges();
 
                 users = new ObservableCollection<User>(db_connection.connection.User.ToList());
 
-                new_client.FIO = tb_FIO.Text;
+                newClient.FIO = tbFIO.Text;
 
-                if (cb_gender.Text == "Мужской")
+                if (cbGender.Text == "Мужской")
                 {
-                    new_client.GenderId = 1;
+                    newClient.GenderId = 1;
                 }
-                else if (cb_gender.Text == "Женский")
+                else if (cbGender.Text == "Женский")
                 {
-                    new_client.GenderId = 2;
+                    newClient.GenderId = 2;
                 }
 
-                new_client.NumberPhone = tb_phone.Text;
-                new_client.Email = tb_email.Text;
-                new_client.AddDate = DateTime.Now;
-                new_client.UserId = users.Last().Id;
+                newClient.NumberPhone = tbPhone.Text;
+                newClient.Email = tbEmail.Text;
+                newClient.AddDate = DateTime.Now;
+                newClient.UserId = users.Last().Id;
 
-                db_connection.connection.Client.Add(new_client);
+                db_connection.connection.Client.Add(newClient);
                 db_connection.connection.SaveChanges();
 
                 MessageBox.Show("All OK");
                 NavigationService.GoBack();
+            }
+        }
+
+        private void tbPhone_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
             }
         }
 
@@ -78,7 +86,7 @@ namespace ShopPyaterochka
             bool login_unic = true;
             foreach (var i in users)
             {
-                if (i.Login == tb_login.Text)
+                if (i.Login == tbLogin.Text)
                 {
                     login_unic = false;
                 }
@@ -86,35 +94,35 @@ namespace ShopPyaterochka
 
             if (login_unic)
             {
-                string pas = tb_password.Text;
-                bool buk = false;
-                bool cif = false;
-                bool spec = false;
-                foreach (var i in pas)
+                string password = tbPassword.Text;
+                bool letters = false;
+                bool numbers = false;
+                bool specialChar = false;
+                foreach (var i in password)
                 {
                     if (Char.IsLetter(i))
                     {
-                        buk = true;
+                        letters = true;
                     }
                 }
 
-                foreach (var i in pas)
+                foreach (var i in password)
                 {
                     if (Char.IsNumber(i))
                     {
-                        cif = true;
+                        numbers = true;
                     }
                 }
 
-                foreach (var i in pas)
+                foreach (var i in password)
                 {
                     if (i == '!' || i == '@' || i == '#' || i == '$' || i == '%' || i == '^')
                     {
-                        spec = true;
+                        specialChar = true;
                     }
                 }
 
-                if (pas.Length > 6 && buk && cif && spec)
+                if (password.Length > 6 && letters && numbers && specialChar)
                 {
                     return true;
                 }
@@ -128,14 +136,6 @@ namespace ShopPyaterochka
             {
                 MessageBox.Show("Такой логин уже существует, придумайте новый");
                 return false;
-            }
-        }
-
-        private void tb_phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            if (!Char.IsDigit(e.Text, 0))
-            {
-                e.Handled = true;
             }
         }
     }

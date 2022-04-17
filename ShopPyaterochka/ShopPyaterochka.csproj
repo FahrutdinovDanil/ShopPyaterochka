@@ -141,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="BackgroundWindow.xaml">
+    <Page Include="StoreWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -149,8 +149,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BackgroundWindow.xaml.cs">
-      <DependentUpon>BackgroundWindow.xaml</DependentUpon>
+    <Compile Include="StoreWindow.xaml.cs">
+      <DependentUpon>StoreWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\ListPage.xaml">

@@ -21,12 +21,12 @@ namespace ShopPyaterochka
     /// </summary>
     public partial class AuthorizationPage : Page
     {
-        public static int pass_count = 0;
+        public static int attempts_count = 0;
         public static ObservableCollection<User> users { get; set; }
         public AuthorizationPage()
         {
             InitializeComponent();
-            tb_login.Text = Properties.Settings.Default.Login;
+            tbLogin.Text = Properties.Settings.Default.Login;
         }
         private void btn_registration_Click(object sender, RoutedEventArgs e)
         {
@@ -36,12 +36,12 @@ namespace ShopPyaterochka
         private void btn_authorization_Click(object sender, RoutedEventArgs e)
         {
             users = new ObservableCollection<User>(db_connection.connection.User.ToList());
-            var z = users.Where(a => a.Login == tb_login.Text && a.Password == tb_password.Text).FirstOrDefault();
+            var z = users.Where(a => a.Login == tbLogin.Text && a.Password == tbPassword.Text).FirstOrDefault();
             if (z != null)
             {
-                if (cb_save.IsChecked.GetValueOrDefault())
+                if (cbRemember.IsChecked.GetValueOrDefault())
                 {
-                    Properties.Settings.Default.Login = tb_login.Text;
+                    Properties.Settings.Default.Login = tbLogin.Text;
                     Properties.Settings.Default.Save();
                 }
                 else
@@ -53,14 +53,14 @@ namespace ShopPyaterochka
             }
             else
             {
-                pass_count++;
+                attempts_count++;
                 MessageBox.Show("Неверный логин или пароль", "error", MessageBoxButton.OK, MessageBoxImage.Error);
-                if (pass_count == 3)
+                if (attempts_count == 3)
                 {
-                    pass_count = 0;
+                    attempts_count = 0;
                     Properties.Settings.Default.Password = DateTime.Now.AddMinutes(1);
                     Properties.Settings.Default.Save();
-                    tb_password.Visibility = Visibility.Hidden;
+                    btnAuthorization.IsEnabled = false;
                 }
             }
         }
