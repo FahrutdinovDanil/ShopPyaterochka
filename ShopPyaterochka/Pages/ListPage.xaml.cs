@@ -150,9 +150,9 @@ namespace ShopPyaterochka
         private void cb_count_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             actualPage = 0;
-            btn_next.Visibility = Visibility.Visible;
-            btn_back_list.Visibility = Visibility.Visible;
-            tb_count.Visibility = Visibility.Visible;
+            //btn_next.Visibility = Visibility.Visible;
+            //btn_back_list.Visibility = Visibility.Visible;
+            //tb_count.Visibility = Visibility.Visible;
             Filter();
         }
 
@@ -178,6 +178,11 @@ namespace ShopPyaterochka
         //}
 
         private void tb_search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btn_order_Click(object sender, RoutedEventArgs e)
         {
 
         }

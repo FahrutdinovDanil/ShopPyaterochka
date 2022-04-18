@@ -91,8 +91,8 @@
     <Compile Include="Order.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pages\RedactionPage.xaml.cs">
-      <DependentUpon>RedactionPage.xaml</DependentUpon>
+    <Compile Include="Pages\EditPage.xaml.cs">
+      <DependentUpon>EditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
@@ -141,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StoreWindow.xaml">
+    <Page Include="ShopWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -149,15 +149,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="StoreWindow.xaml.cs">
-      <DependentUpon>StoreWindow.xaml</DependentUpon>
+    <Compile Include="ShopWindow.xaml.cs">
+      <DependentUpon>ShopWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\ListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\RedactionPage.xaml">
+    <Page Include="Pages\EditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,6 +211,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="img\logo.png" />
     <Content Include="ModelDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelDB.Context.cs</LastGenOutput>
