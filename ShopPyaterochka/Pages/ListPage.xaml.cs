@@ -59,7 +59,7 @@ namespace ShopPyaterochka
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new AddPage());
+            NavigationService.Navigate(new AddPage(new Product()));
         }
 
         public void Filter()
@@ -176,11 +176,6 @@ namespace ShopPyaterochka
         //{
         //    NavigationService.Navigate(new OrderPage(user));
         //}
-
-        private void tb_search_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
 
         private void btn_order_Click(object sender, RoutedEventArgs e)
         {

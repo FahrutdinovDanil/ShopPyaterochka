@@ -31,22 +31,9 @@ namespace ShopPyaterochka.Pages
             tb_id.Text = n.Id.ToString();
             tb_name.Text = n.Name;
             tb_description.Text = n.Description;
-
+            cb_unit.ItemsSource = db_connection.connection.Unit.ToList();
             cb_country.ItemsSource = db_connection.connection.Country.ToList();
             cb_country.DisplayMemberPath = "Name";
-
-            if (n.UnitId == 1)
-            {
-                rb_kg.IsChecked = true;
-            }
-            else if (n.UnitId == 2)
-            {
-                rb_st.IsChecked = true;
-            }
-            else if (n.UnitId == 3)
-            {
-                rb_l.IsChecked = true;
-            }
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
@@ -101,18 +88,8 @@ namespace ShopPyaterochka.Pages
             constProd.Name = tb_name.Text;
             constProd.Description = tb_description.Text;
             constProd.AddDate = DateTime.Now;
-            if (rb_kg.IsChecked == true)
-            {
-                constProd.UnitId = 1;
-            }
-            else if (rb_l.IsChecked == true)
-            {
-                constProd.UnitId = 3;
-            }
-            else
-            {
-                constProd.UnitId = 2;
-            }
+            var unit = cb_unit.SelectedItem as Unit;
+            constProd.UnitId = unit.Id;
             db_connection.connection.SaveChanges();
             NavigationService.Navigate(new ListPage(ListPage.user));
         }

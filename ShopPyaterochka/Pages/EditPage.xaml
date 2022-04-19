@@ -14,6 +14,9 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -24,43 +27,42 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+        <TextBlock Text="Редактирование товаров" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="3"></TextBlock>
+        <Button x:Name="btn_back" Content="Назад" Grid.Column="0" Grid.Row="10" Height="30" Width="150" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,60,0" Click="btn_back_Click"/>
+        <Button x:Name="btn_save" Content="Сохранить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2" Height="30" Width="200" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_save_Click"/>
+        <Button x:Name="btn_delite" Content="Удалить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="200" Click="btn_delite_Click"/>
 
-        <Button x:Name="btn_back" Content="Назад" Grid.Column="0" Grid.Row="0" Height="30" Width="100" VerticalAlignment="Top" HorizontalAlignment="Left" Click="btn_back_Click"/>
-        <Button x:Name="btn_save" Content="Сохранить" Grid.Column="3" Grid.Row="0" Height="60" Width="200" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btn_save_Click"/>
-        <Button x:Name="btn_delite" Content="Удалить" Grid.Column="3" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="60" Width="200" Click="btn_delite_Click"/>
+        <TextBlock Text="ID" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Название" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Описание" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Ед.измерения" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock Text="Страны" Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock Text="ID" Grid.Column="0" Grid.Row="1"/>
-        <TextBlock Text="Название" Grid.Column="0" Grid.Row="2"/>
-        <TextBlock Text="Описание" Grid.Column="0" Grid.Row="3"/>
-        <TextBlock Text="Ед.измерения" Grid.Column="0" Grid.Row="4"/>
-        <TextBlock Text="Страны" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock x:Name="tb_id" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"  Foreground="#FF553026"/>
+        <TextBox x:Name="tb_name" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" Height="30" Grid.ColumnSpan="2" PreviewTextInput="tb_name_PreviewTextInput"/>
+        <TextBox x:Name="tb_description" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" Height="30" Grid.ColumnSpan="2" PreviewTextInput="tb_name_PreviewTextInput"/>
 
-        <TextBlock x:Name="tb_id" Grid.Column="1" Grid.Row="1"/>
-        <TextBox x:Name="tb_name" Grid.Column="1" Grid.Row="2" PreviewTextInput="tb_name_PreviewTextInput"/>
-        <TextBox x:Name="tb_description" Grid.Column="1" Grid.Row="3" PreviewTextInput="tb_name_PreviewTextInput"/>
+        <ComboBox x:Name="cb_unit" Grid.Column="1" Grid.Row="4" VerticalContentAlignment="Center" Height="30" Grid.ColumnSpan="2" SelectedItem="{Binding Unit}" DisplayMemberPath="Name"/>
 
-        <StackPanel x:Name="sp_unit" Grid.Column="1" Grid.Row="4" Margin="5">
-            <RadioButton x:Name="rb_kg" GroupName="unit" Content="кг"/>
-            <RadioButton x:Name="rb_st" GroupName="unit" Content="шт"/>
-            <RadioButton x:Name="rb_l" GroupName="unit" Content="л"/>
-        </StackPanel>
-
-        <StackPanel x:Name="sp_country" Grid.Column="1" Grid.Row="5" Grid.RowSpan="6">
-            <ListView x:Name="lv_country" ItemsSource="{Binding ProductCountry}" Width="150" Height="150">
+        <StackPanel x:Name="sp_country" Grid.Column="1" Grid.Row="5" Grid.RowSpan="5" Grid.ColumnSpan="3" HorizontalAlignment="Left">
+            <ListView x:Name="lv_country" ItemsSource="{Binding ProductCountry}" Width="250" Height="100">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Label Content="{Binding Country.Name}" Background="{Binding Country.Color}" Height="50"/>
+                        <Label Content="{Binding Country.Name}" Background="{Binding Country.Color}" Width="250" Height="30"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ComboBox Name="cb_country"/>
-            <Button x:Name="btn_add_country" Content="Добавить страну" Click="btn_add_country_Click"/>
-            <Button x:Name="btn_del_country" Content="Удалить страну" Click="btn_del_country_Click"/>
+            <ComboBox Name="cb_country" Height="25" Width="250"/>
+            <Button x:Name="btn_add_country" Content="Добавить страну" Height="25" Width="250" Click="btn_add_country_Click"/>
+            <Button x:Name="btn_del_country" Content="Удалить страну" Height="25" Width="250" Click="btn_del_country_Click"/>
         </StackPanel>
 
-        <Image x:Name="img_prod" Source="{Binding Photo}" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="5" Margin="15"/>
-        <Button x:Name="btn_newphoto" Content="Изменить фото" Grid.Column="2" Grid.ColumnSpan="3" Grid.Row="6" HorizontalAlignment="Center" Width="200" Click="btn_newphoto_Click"/>
+        <Image x:Name="img_prod" Source="{Binding Photo}" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="5" Margin="15"/>
+        <Button x:Name="btn_newphoto" Content="Изменить фото" Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="6" Height="30" VerticalAlignment="Center"  HorizontalAlignment="Center" Width="200" Click="btn_newphoto_Click"/>
 
     </Grid>
 </Page>

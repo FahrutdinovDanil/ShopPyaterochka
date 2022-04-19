@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +23,14 @@ namespace ShopPyaterochka.Pages
     /// </summary>
     public partial class AddPage : Page
     {
-        public AddPage()
+        Product productToAdd;
+        public static ObservableCollection<Product> products { get; set; }
+        public AddPage(Product product)
         {
             InitializeComponent();
+            DataContext = productToAdd;
+            productToAdd = product;
+            cb_unit.ItemsSource = db_connection.connection.Unit.ToList();
         }
         private void btn_back_Click(object sender, RoutedEventArgs e)
         {
@@ -33,7 +41,33 @@ namespace ShopPyaterochka.Pages
         {
             if (!Char.IsLetter(e.Text, 0) && e.Text != "-")
             {
-                e.Handled = true;
+                e.Handled = true;Product new_product = new Product();
+            }
+        }
+
+        private void btn_save_Click(object sender, RoutedEventArgs e)
+        {
+            productToAdd.Name = tb_name.Text;
+            productToAdd.Description = tb_description.Text;
+            productToAdd.AddDate = DateTime.Now;
+            var unit = cb_unit.SelectedItem as Unit;
+            productToAdd.UnitId = unit.Id;
+            db_connection.connection.Product.Add(productToAdd);
+            db_connection.connection.SaveChanges();
+            products = new ObservableCollection<Product>(db_connection.connection.Product.ToList());
+            NavigationService.Navigate(new ListPage(ListPage.user));
+        }
+
+        private void btn_newphoto_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog()
+            {
+                Filter = "*.jpg|*.jpg|*.png|*.png"
+            };
+            if (openFile.ShowDialog().GetValueOrDefault())
+            {
+                productToAdd.Photo = File.ReadAllBytes(openFile.FileName);
+                img_prod.Source = new BitmapImage(new Uri(openFile.FileName));
             }
         }
     }
