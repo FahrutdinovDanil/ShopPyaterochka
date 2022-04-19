@@ -35,7 +35,8 @@
 
         <Image Source="/img/logo.png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Margin="10,0" HorizontalAlignment="Left"/>
         <Button x:Name="btn_add" Content="Добавить" Grid.Column="5" Grid.Row="0" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Click="btn_add_Click"/>
-        <Button x:Name="btn_othet" Content="Отчеты" Grid.Column="6" Grid.Row="0" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="btn_orders" Content="Заказать" Grid.Column="6" Grid.Row="0" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_orders_Click"/>
+        <!--<Button x:Name="btn_postup" Content="Отчет" Grid.Column="7" Grid.Row="0" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_postup_Click"/>-->
         <Button x:Name="btn_order" Content="Заказ" Grid.Column="7" Grid.Row="0" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_order_Click"/>
 
         <ListView x:Name="prod" ItemsSource="{Binding products}" Grid.Column="0" Grid.ColumnSpan="8" Grid.Row="2" Grid.RowSpan="8" SelectionChanged="prod_SelectionChanged" Margin="0,0,0,6">

@@ -7,26 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopPyaterochka
+namespace ShopPyaterochka.BD
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductIntake
+    public partial class Country
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductIntake()
+        public Country()
         {
-            this.ProductIntakeProduct = new HashSet<ProductIntakeProduct>();
+            this.ProductCountry = new HashSet<ProductCountry>();
         }
     
         public int Id { get; set; }
-        public int SupplierId { get; set; }
-        public decimal TotalAmount { get; set; }
-        public System.DateTime Data { get; set; }
+        public string Name { get; set; }
+        public string Color { get; set; }
     
-        public virtual Supplier Supplier { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductIntakeProduct> ProductIntakeProduct { get; set; }
+        public virtual ICollection<ProductCountry> ProductCountry { get; set; }
     }
 }

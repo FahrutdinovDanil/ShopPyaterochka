@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
 using ShopPyaterochka.Pages;
+using ShopPyaterochka.BD;
 
 namespace ShopPyaterochka
 {
@@ -172,13 +173,19 @@ namespace ShopPyaterochka
             Filter();
         }
 
-        //private void btn_order_Click(object sender, RoutedEventArgs e)
-        //{
-        //    NavigationService.Navigate(new OrderPage(user));
-        //}
-
         private void btn_order_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new OrderPage(user));
+        }
+
+        private void btn_orders_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OrdersPage(user));
+        }
+
+        private void btn_postup_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AdmissionPage());
 
         }
     }

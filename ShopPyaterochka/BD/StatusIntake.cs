@@ -7,35 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopPyaterochka
+namespace ShopPyaterochka.BD
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class StatusIntake
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public StatusIntake()
         {
-            this.ProductCountry = new HashSet<ProductCountry>();
             this.ProductIntakeProduct = new HashSet<ProductIntakeProduct>();
-            this.ProductOrder = new HashSet<ProductOrder>();
         }
     
         public int Id { get; set; }
-        public byte[] Photo { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public int UnitId { get; set; }
-        public System.DateTime AddDate { get; set; }
-        public Nullable<bool> IsDeleted { get; set; }
     
-        public virtual Unit Unit { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductCountry> ProductCountry { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductIntakeProduct> ProductIntakeProduct { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductOrder> ProductOrder { get; set; }
     }
 }

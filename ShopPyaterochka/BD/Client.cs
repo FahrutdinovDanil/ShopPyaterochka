@@ -7,30 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopPyaterochka
+namespace ShopPyaterochka.BD
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Client
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Client()
         {
-            this.ProductOrder = new HashSet<ProductOrder>();
+            this.Order = new HashSet<Order>();
+            this.Order1 = new HashSet<Order>();
         }
     
         public int Id { get; set; }
-        public Nullable<int> WorkerId { get; set; }
-        public System.DateTime Date { get; set; }
-        public Nullable<int> ClientId { get; set; }
-        public Nullable<int> StatusOrderId { get; set; }
+        public string FIO { get; set; }
+        public int GenderId { get; set; }
+        public string NumberPhone { get; set; }
+        public string Email { get; set; }
+        public System.DateTime AddDate { get; set; }
+        public int UserId { get; set; }
     
-        public virtual Client Client { get; set; }
-        public virtual Client Client1 { get; set; }
-        public virtual StatusOrder StatusOrder { get; set; }
-        public virtual Worker Worker { get; set; }
+        public virtual Gender Gender { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductOrder> ProductOrder { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Order1 { get; set; }
     }
 }

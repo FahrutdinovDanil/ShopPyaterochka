@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopPyaterochka
+namespace ShopPyaterochka.BD
 {
     using System;
     using System.Collections.Generic;

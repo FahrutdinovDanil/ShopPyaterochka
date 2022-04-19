@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopPyaterochka
+namespace ShopPyaterochka.BD
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Supplier
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Supplier()
+        public Role()
         {
-            this.ProductIntake = new HashSet<ProductIntake>();
+            this.User = new HashSet<User>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductIntake> ProductIntake { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }
